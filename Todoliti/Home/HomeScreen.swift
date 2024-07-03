@@ -13,8 +13,11 @@ struct HomeScreen: View {
                 ItemCell(model: item) { cellAction in
                     handleCellAction(item: item, action: cellAction)
                 }
-                .swipeActions {
+                .swipeActions(edge: .leading) {
                     deleteButton(item: item)
+                }
+                .swipeActions(edge: .trailing) {
+                    doneButton(item: item)
                 }
             }
             .animation(.easeIn, value: viewModel.items)
@@ -64,6 +67,14 @@ struct HomeScreen: View {
         } label: {
             Text("DELETE")
         }.tint(.red)
+    }
+
+    private func doneButton(item: TodoItem) -> some View {
+        Button {
+            viewModel.toggleItemState(item)
+        } label: {
+            Text("VALIDATE")
+        }.tint(.green)
     }
 
     private func submit() {
