@@ -41,6 +41,17 @@ final class HomeScreenViewModel: ObservableObject {
         }
     }
 
+    func deleteItem(_ item: TodoItem) {
+        Task {
+            do {
+                try await manager.deleteTask(model: item)
+                await loadItems()
+            } catch {
+                // Handle error
+            }
+        }
+    }
+
     func createItem(title: String) {
         guard !title.isEmpty else {
             hasError = true

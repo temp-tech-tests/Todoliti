@@ -18,6 +18,23 @@
         }
       }
     },
+    "DELETE" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Supprimer"
+          }
+        }
+      }
+    },
     "HOME_CREATE_TASK_MESSAGE" : {
       "extractionState" : "manual",
       "localizations" : {

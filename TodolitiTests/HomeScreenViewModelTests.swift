@@ -17,6 +17,10 @@ final class HomeScreenViewModelTests: XCTestCase {
 }
 
 private class MockManager: TodoManagerRepresentable {
+    func deleteTask(model: Todoliti.TodoItem) async throws {
+        // ..
+    }
+    
     func createTask(title: String) async throws {
         // ..
     }

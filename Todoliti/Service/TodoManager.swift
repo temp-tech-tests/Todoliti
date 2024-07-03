@@ -5,6 +5,7 @@ protocol TodoManagerRepresentable {
     func createTask(title: String) async throws
     func loadTasks() async throws -> [TodoItem]
     func updateTask(model: TodoItem) async throws
+    func deleteTask(model: TodoItem) async throws
 }
 
 final class TodoManager: TodoManagerRepresentable {
@@ -13,6 +14,7 @@ final class TodoManager: TodoManagerRepresentable {
         case failedToCreateItem
         case failedToLoadItem
         case failedToUpdateItem
+        case failedToDeleteItem
     }
 
     private let service: TodoService
@@ -43,6 +45,14 @@ final class TodoManager: TodoManagerRepresentable {
             try await service.updateEntity(updateEntity: model)
         } catch {
             throw TodoManagerError.failedToUpdateItem
+        }
+    }
+
+    func deleteTask(model: TodoItem) async throws {
+        do {
+            try await service.deleteEntity(withIdentifier: model.id)
+        } catch {
+            throw TodoManagerError.failedToDeleteItem
         }
     }
 }

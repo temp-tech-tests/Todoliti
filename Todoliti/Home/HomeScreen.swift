@@ -13,8 +13,11 @@ struct HomeScreen: View {
                 ItemCell(model: item) { cellAction in
                     handleCellAction(item: item, action: cellAction)
                 }
+                .swipeActions {
+                    deleteButton(item: item)
                 }
             }
+            .animation(.easeIn, value: viewModel.items)
             .listStyle(.plain)
             .navigationTitle("HOME_WELCOME")
             .task {
@@ -55,6 +58,14 @@ struct HomeScreen: View {
         }.buttonStyle(PlainButtonStyle())
     }
 
+    private func deleteButton(item: TodoItem) -> some View {
+        Button {
+            viewModel.deleteItem(item)
+        } label: {
+            Text("DELETE")
+        }.tint(.red)
+    }
+
     private func submit() {
         viewModel.createItem(title: newTaskName)
         resetTaskName()
@@ -78,6 +89,7 @@ struct HomeScreen: View {
     
     class MockManager: TodoManagerRepresentable {
         var tasks: [TodoItem] = []
+
         func createTask(title: String) async throws {
             tasks.append(TodoItem(id: UUID(), title: title, details: "details", createdDate: Date(), status: .todo))
         }
@@ -89,6 +101,10 @@ struct HomeScreen: View {
         func updateTask(model: TodoItem) async throws {
             guard let index = tasks.firstIndex(where: {$0.id == model.id}) else { return }
             tasks[index] = model
+        }
+
+        func deleteTask(model: TodoItem) async throws {
+            tasks.removeAll(where: { $0.id == model.id })
         }
     }
 
