@@ -40,7 +40,7 @@ final class ItemDetailsScreenViewModel: ObservableObject {
                     title: editingItem.editingTitle,
                     details: editingItem.editingDetails.isEmpty ? nil : editingItem.editingDetails,
                     createdDate: editingItem.itemModel.createdDate,
-                    status: editingItem.itemModel.status))
+                    status: editingItem.editingStatus))
             } catch {
                 showError = true
             }
