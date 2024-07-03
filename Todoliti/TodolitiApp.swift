@@ -11,7 +11,8 @@ import SwiftUI
 struct TodolitiApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeScreen()
+                .environmentObject(HomeScreenViewModel())
         }
     }
 }
