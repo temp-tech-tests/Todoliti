@@ -2,6 +2,12 @@ import SwiftUI
 
 struct ItemDetailsScreen: View {
 
+    private enum Field {
+        case title
+        case details
+    }
+
+    @FocusState private var focused: Field?
     @Binding var path: [TodoItem]
     @State private var showDeletionConfirmationDialog: Bool = false
     @EnvironmentObject private var viewModel: ItemDetailsScreenViewModel
@@ -16,10 +22,17 @@ struct ItemDetailsScreen: View {
                 Divider()
 
                 textField(title: "ITEM_DETAILS_TITLE_PLACEHOLDER", $viewModel.editingItem.editingTitle)
-                textField(title: "ITEM_DETAILS_DETAILS_PLACEHOLDER", largeEdit: true, $viewModel.editingItem.editingDetails)
+                    .focused($focused, equals: .title)
+                textField(title: "ITEM_DETAILS_DETAILS_PLACEHOLDER", $viewModel.editingItem.editingDetails)
+                    .focused($focused, equals: .details)
 
-            }.textFieldStyle(.roundedBorder)
+            }
+            .textFieldStyle(.roundedBorder)
+            .onSubmit {
+                focused = nil
+            }
         }
+        .scrollDismissesKeyboard(.immediately)
         .confirmationDialog("ITEM_SUPPRESSION_CONFIRMATION_TITLE", isPresented: $showDeletionConfirmationDialog) {
             Button("ITEM_DETAILS_CONFIRMATION_DELETE", role: .destructive) {
                 Task {
@@ -53,15 +66,14 @@ struct ItemDetailsScreen: View {
         .padding(.horizontal)
     }
 
-    private func textField(title: LocalizedStringKey, largeEdit: Bool = false, _ text: Binding<String>) -> some View {
+    private func textField(title: LocalizedStringKey, _ text: Binding<String>) -> some View {
         VStack(alignment: .leading) {
             Text(title)
                 .font(.caption)
                 .foregroundStyle(.secondary)
                 .padding(.top)
-                .lineLimit(2)
-            TextField(title, text: text, axis: .vertical)
-                .lineLimit(largeEdit ? 8 : 2, reservesSpace: true)
+            TextField(title, text: text)
+                .submitLabel(.done)
         }
     }
 }
