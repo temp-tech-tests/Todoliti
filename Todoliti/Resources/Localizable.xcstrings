@@ -137,6 +137,23 @@
         }
       }
     },
+    "TASK_TODO" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To do"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "A faire"
+          }
+        }
+      }
+    },
     "VALIDATE" : {
       "extractionState" : "manual",
       "localizations" : {

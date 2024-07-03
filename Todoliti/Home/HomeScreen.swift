@@ -69,12 +69,14 @@ struct HomeScreen: View {
         }.tint(.red)
     }
 
+    @ViewBuilder
     private func doneButton(item: TodoItem) -> some View {
+        let taskDone = item.coreStatus == .completed
         Button {
             viewModel.toggleItemState(item)
         } label: {
-            Text("VALIDATE")
-        }.tint(.green)
+            Text(taskDone ? "TASK_TODO" : "VALIDATE")
+        }.tint(taskDone ? .yellow : .green)
     }
 
     private func submit() {
