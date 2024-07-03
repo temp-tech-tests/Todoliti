@@ -30,5 +30,11 @@ final class TodoServiceTests: XCTestCase {
         let entities = try await sut.retrieveItems()
 
         XCTAssertEqual(entities.count, 2)
+
+        XCTAssertEqual(entities[0].title, "Test-1")
+        XCTAssertEqual(entities[1].title, "Test")
+
+        XCTAssertNil(entities[0].details)
+        XCTAssertEqual(entities[1].details, "Test details")
     }
 }

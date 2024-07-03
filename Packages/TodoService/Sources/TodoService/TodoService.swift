@@ -67,6 +67,8 @@ public final class TodoService {
 
     /// Use this method to retrieve stored items.
     ///
+    /// Entities are sorted the most recent first and descending.
+    ///
     /// - Returns: An array of ``CoreTodoItem``.
     ///
     /// - Throws: Method can throw an error defined in ``TodoServiceError``.
@@ -75,6 +77,9 @@ public final class TodoService {
 
         return try await context.perform {
             let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constant.todoItemEntityName)
+
+            let sortDescriptor = NSSortDescriptor(key: "createdDate", ascending: false)
+            fetchRequest.sortDescriptors = [sortDescriptor]
 
             do {
                 let entities = try context.fetch(fetchRequest)
