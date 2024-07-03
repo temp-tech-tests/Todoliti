@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "CANCEL" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -201,6 +204,23 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Terminer"
+          }
+        }
+      }
+    },
+    "ITEM_DETAILS_STATUS_VIEW_TITLE" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Status"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Statut"
           }
         }
       }

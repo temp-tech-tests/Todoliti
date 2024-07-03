@@ -25,6 +25,7 @@
 		A0B608AA2C3551B800DB0D34 /* NewTaskAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608A92C3551B800DB0D34 /* NewTaskAlertModifier.swift */; };
 		A0B608AD2C35846500DB0D34 /* ItemDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608AC2C35846500DB0D34 /* ItemDetailsScreen.swift */; };
 		A0B608AF2C358BB400DB0D34 /* ItemDetailsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608AE2C358BB400DB0D34 /* ItemDetailsScreenViewModel.swift */; };
+		A0B608B32C3597B300DB0D34 /* ItemDetailsCheckMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608B22C3597B300DB0D34 /* ItemDetailsCheckMarkView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		A0B608A92C3551B800DB0D34 /* NewTaskAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskAlertModifier.swift; sourceTree = "<group>"; };
 		A0B608AC2C35846500DB0D34 /* ItemDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsScreen.swift; sourceTree = "<group>"; };
 		A0B608AE2C358BB400DB0D34 /* ItemDetailsScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsScreenViewModel.swift; sourceTree = "<group>"; };
+		A0B608B22C3597B300DB0D34 /* ItemDetailsCheckMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsCheckMarkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				A0B608AC2C35846500DB0D34 /* ItemDetailsScreen.swift */,
+				A0B608B22C3597B300DB0D34 /* ItemDetailsCheckMarkView.swift */,
 				A0B608AE2C358BB400DB0D34 /* ItemDetailsScreenViewModel.swift */,
 			);
 			path = ItemDetails;
@@ -355,6 +358,7 @@
 				A0B608992C35478500DB0D34 /* TodoItem.swift in Sources */,
 				A0B608962C35474200DB0D34 /* ItemCell.swift in Sources */,
 				A0B608AD2C35846500DB0D34 /* ItemDetailsScreen.swift in Sources */,
+				A0B608B32C3597B300DB0D34 /* ItemDetailsCheckMarkView.swift in Sources */,
 				A0B608A02C354AE400DB0D34 /* TodoManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

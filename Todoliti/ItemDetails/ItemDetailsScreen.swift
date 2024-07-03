@@ -9,6 +9,10 @@ struct ItemDetailsScreen: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
+
+                ItemDetailsCheckMarkView(status: $viewModel.editingItem.editingStatus)
+                    .padding(.vertical)
+
                 Text(viewModel.editingItem.itemModel.status == .completed ? "ITEM_DETAILS_DONE" : "ITEM_DETAILS_TODO")
                     .font(.caption)
                     .foregroundStyle(.secondary)
