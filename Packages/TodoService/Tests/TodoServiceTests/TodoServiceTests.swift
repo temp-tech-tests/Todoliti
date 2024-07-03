@@ -76,4 +76,59 @@ final class TodoServiceTests: XCTestCase {
             XCTFail("Incorrect error thrown on deletion attempt")
         }
     }
+
+    func testCreateAndUpdateEntity() async throws {
+        let sut = TodoService(storeDescription: nonPersistantStoreDescription)
+
+        try await sut.createItem(title: "Test", details: "Test details")
+
+        let entities = try await sut.retrieveItems()
+
+        XCTAssertEqual(entities.count, 1)
+        XCTAssertEqual(entities[0].title, "Test")
+        XCTAssertEqual(entities[0].details, "Test details")
+
+        let newEntity = UpdateEntityModel(identifier: entities[0].identifier, title: "New title", details: "New details")
+
+        try await sut.updateEntity(updateEntity: newEntity)
+        let updatedEntities = try await sut.retrieveItems()
+
+        XCTAssertEqual(updatedEntities[0].title, "New title")
+        XCTAssertEqual(updatedEntities[0].details, "New details")
+    }
+
+    func testUpdatingNonExistingItem() async throws {
+        let sut = TodoService(storeDescription: nonPersistantStoreDescription)
+
+        do {
+            try await sut.updateEntity(updateEntity: UpdateEntityModel(
+                identifier: UUID(),
+                title: "test",
+                details: "test"))
+
+            XCTFail("Sut should no be able to update non existing item")
+        } catch let error as TodoServiceError {
+            switch error {
+            case .itemNotFound:
+                break // Correct error.
+            default:
+                print(error)
+                XCTFail("Incorrect error thrown on update attempt")
+            }
+        } catch {
+            XCTFail("Incorrect error thrown on update attempt")
+        }
+    }
+}
+
+private struct UpdateEntityModel: CoreUpdateEntity {
+    var identifier: UUID
+    var title: String
+    var details: String
+
+    init(identifier: UUID, title: String, details: String) {
+        self.identifier = identifier
+        self.title = title
+        self.details = details
+    }
 }

@@ -4,4 +4,5 @@ public enum TodoServiceError: Error {
     case failedToFetchEntities
     case failedToDeleteAnItem
     case itemNotFound
+    case failedToUpdateItem
 }
