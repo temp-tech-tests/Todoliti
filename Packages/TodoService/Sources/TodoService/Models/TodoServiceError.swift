@@ -2,4 +2,6 @@
 public enum TodoServiceError: Error {
     case failedToCreateEntity
     case failedToFetchEntities
+    case failedToDeleteAnItem
+    case itemNotFound
 }

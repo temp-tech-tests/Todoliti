@@ -90,4 +90,35 @@ public final class TodoService {
             }
         }
     }
+
+    /// Use this method to delete entities.
+    ///
+    /// - Parameters
+    ///     - Identifier: A unique UUID identifying an entity.
+    ///
+    /// - Throws: This method can throw a ``TodoServiceError``.
+    public func deleteEntity(withIdentifier identifier: UUID) async throws {
+        let context = persistentContainer.newBackgroundContext()
+        try await context.perform {
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constant.todoItemEntityName)
+            fetchRequest.predicate = NSPredicate(format: "identifier == %@", identifier as CVarArg)
+
+            do {
+                let results = try context.fetch(fetchRequest)
+
+                guard !results.isEmpty else {
+                    throw TodoServiceError.itemNotFound
+                }
+
+                for item in results {
+                    context.delete(item)
+                    try context.save()
+                }
+            } catch let error as TodoServiceError {
+                throw error
+            } catch {
+                throw TodoServiceError.failedToDeleteAnItem
+            }
+        }
+    }
 }
