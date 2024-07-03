@@ -2,6 +2,8 @@ import SwiftUI
 
 struct ItemDetailsScreen: View {
 
+    @State private var showDeletionConfirmationDialog: Bool = false
+
     @EnvironmentObject private var viewModel: ItemDetailsScreenViewModel
 
     var body: some View {
@@ -17,34 +19,34 @@ struct ItemDetailsScreen: View {
 
             }.textFieldStyle(.roundedBorder)
         }
-        .safeAreaInset(edge: .bottom) {
-            HStack {
-                Button {
-                    // ..
-                } label: {
-                    Text("DELETE")
-                        .frame(maxWidth: .infinity)
-                        .foregroundStyle(.red)
-                }
-                .buttonStyle(BorderedProminentButtonStyle())
-                .tint(.secondary.opacity(0.2))
-
-                Button {
-                    // ..
-                } label: {
-                    Text("VALIDATE")
-                        .frame(maxWidth: .infinity)
-                }
-                .tint(.green)
-                .buttonStyle(BorderedProminentButtonStyle())
+        .confirmationDialog("Supprimer ?", isPresented: $showDeletionConfirmationDialog) {
+            Button("Confirmer", role: .destructive) {
+                // ..
             }
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    showDeletionConfirmationDialog.toggle()
+                } label: {
+                    Image(systemName: "trash")
+                }
+            }
+        }
+        .safeAreaInset(edge: .bottom) {
+            Button {
+                // ..
+            } label: {
+                Text("Terminer")
+                    .frame(maxWidth: .infinity)
+            }
+            .buttonStyle(BorderedProminentButtonStyle())
+        }
+        .onChange(of: viewModel.editingItem) { _, _ in
+            viewModel.updateModel()
         }
         .navigationTitle(viewModel.editingItem.editingTitle)
         .padding()
-    }
-
-    private func updateItem() {
-
     }
 
     private func textField(title: LocalizedStringKey, largeEdit: Bool = false, _ text: Binding<String>) -> some View {

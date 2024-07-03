@@ -9,16 +9,28 @@ final class ItemDetailsScreenViewModel: ObservableObject {
         var itemModel: TodoItem
         var editingTitle: String
         var editingDetails: String
+        var editingStatus: TodoItemStatus
     }
 
-    init(todoItem: TodoItem) {
+    private let manager: any TodoManagerRepresentable
+
+    init(todoItem: TodoItem, manager: some TodoManagerRepresentable = TodoManager()) {
         self.editingItem = EditingItem(
             itemModel: todoItem,
             editingTitle: todoItem.title,
-            editingDetails: todoItem.details ?? "")
+            editingDetails: todoItem.details ?? "",
+            editingStatus: todoItem.status)
+        self.manager = manager
     }
 
     func updateModel() {
-
+        Task {
+            try await manager.updateTask(model: TodoItem(
+                id: editingItem.itemModel.id,
+                title: editingItem.editingTitle,
+                details: editingItem.editingDetails.isEmpty ? nil : editingItem.editingDetails,
+                createdDate: editingItem.itemModel.createdDate,
+                status: editingItem.itemModel.status))
+        }
     }
 }
