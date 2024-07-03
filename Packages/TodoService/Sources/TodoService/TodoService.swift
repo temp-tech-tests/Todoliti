@@ -17,7 +17,9 @@ public final class TodoService {
         }
 
         let container = NSPersistentContainer(name: Constant.containerName, managedObjectModel: model)
-        container.persistentStoreDescriptions = [storeDescription]
+        if let storeDescription {
+            container.persistentStoreDescriptions = [storeDescription]
+        }
         container.loadPersistentStores { storeDescription, error in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
@@ -26,13 +28,13 @@ public final class TodoService {
         return container
     }()
 
-    private let storeDescription: NSPersistentStoreDescription
+    private let storeDescription: NSPersistentStoreDescription?
 
     /// Main initializer for ``TodoService``
     ///
     /// - Parameters:
     ///     - storeDescription: A custom store description to pass to ``TodoService`` for unit testing for instance.
-    public init(storeDescription: NSPersistentStoreDescription = NSPersistentStoreDescription()) {
+    public init(storeDescription: NSPersistentStoreDescription? = nil) {
         self.storeDescription = storeDescription
     }
 
