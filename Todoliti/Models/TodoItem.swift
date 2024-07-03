@@ -1,6 +1,6 @@
 import Foundation
 
-struct TodoItem: Identifiable, Equatable {
+struct TodoItem: Identifiable, Equatable, Hashable {
     let id: UUID
     let title: String
     let details: String?

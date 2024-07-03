@@ -4,6 +4,7 @@ struct HomeScreen: View {
 
     @State private var newTaskName: String = ""
     @State private var showAlert: Bool = false
+    @State private var selectedItem: TodoItem?
 
     @EnvironmentObject private var viewModel: HomeScreenViewModel
 
@@ -42,6 +43,9 @@ struct HomeScreen: View {
                 text: $newTaskName,
                 show: $showAlert,
                 onSubmit: submit)
+            .navigationDestination(item: $selectedItem) { item in
+                ItemDetailsScreen(itemModel: item)
+            }
         }
     }
 
@@ -93,7 +97,7 @@ struct HomeScreen: View {
         case .checked:
             viewModel.toggleItemState(item)
         case .tapped:
-            break
+            selectedItem = item
         }
     }
 }
