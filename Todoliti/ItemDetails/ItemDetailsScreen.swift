@@ -13,9 +13,6 @@ struct ItemDetailsScreen: View {
                 ItemDetailsCheckMarkView(status: $viewModel.editingItem.editingStatus)
                     .padding(.vertical)
 
-                Text(viewModel.editingItem.itemModel.status == .completed ? "ITEM_DETAILS_DONE" : "ITEM_DETAILS_TODO")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
                 Divider()
 
                 textField(title: "ITEM_DETAILS_TITLE_PLACEHOLDER", $viewModel.editingItem.editingTitle)
@@ -53,7 +50,7 @@ struct ItemDetailsScreen: View {
             viewModel.updateModel()
         }
         .navigationTitle(viewModel.editingItem.editingTitle)
-        .padding()
+        .padding(.horizontal)
     }
 
     private func textField(title: LocalizedStringKey, largeEdit: Bool = false, _ text: Binding<String>) -> some View {

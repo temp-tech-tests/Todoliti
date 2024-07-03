@@ -13,7 +13,12 @@ struct ItemDetailsCheckMarkView: View {
 
     var body: some View {
         HStack {
-            Text("ITEM_DETAILS_STATUS_VIEW_TITLE")
+            VStack(alignment: .leading) {
+                Text("ITEM_DETAILS_STATUS_VIEW_TITLE")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                Text(status == .completed ? "ITEM_DETAILS_DONE" : "ITEM_DETAILS_TODO")
+            }
             Spacer()
             Button {
                 withAnimation {
