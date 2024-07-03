@@ -7,13 +7,20 @@ final class HomeScreenViewModel: ObservableObject {
         case date, status
     }
 
+    private var initialItems: [TodoItem] = []
+
+    @Published var searchText: String = ""
     @Published var showError: Bool = false
     @Published var sortingOption: SortingOption = .date
     @Published var items: [TodoItem] = []
     @Published var hasError: Bool = false
 
+    var isInSearchMode: Bool {
+        !searchText.isEmpty
+    }
+
     var featuresTask: Bool {
-        !items.isEmpty
+        !initialItems.isEmpty
     }
 
     private let manager: any TodoManagerRepresentable
@@ -22,9 +29,21 @@ final class HomeScreenViewModel: ObservableObject {
         self.manager = manager
     }
 
+    func searchItems() {
+        if searchText.isEmpty {
+            items = initialItems
+        } else {
+            items = initialItems.filter { item in
+                item.title.folded.contains(searchText.folded)
+            }
+        }
+        updateSortingOption(sortingOption)
+    }
+
     func loadItems() async {
         do {
-            items = try await manager.loadTasks()
+            initialItems = try await manager.loadTasks()
+            items = initialItems
             updateSortingOption(sortingOption)
         } catch {
             showError = true
@@ -84,5 +103,11 @@ final class HomeScreenViewModel: ObservableObject {
                 showError = true
             }
         }
+    }
+}
+
+private extension String {
+    var folded: String {
+        self.folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
     }
 }

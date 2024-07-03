@@ -46,8 +46,13 @@ struct HomeScreen: View {
             .task {
                 await viewModel.loadItems()
             }
+            .searchable(text: $viewModel.searchText, prompt: "SEARCH_PLACEHOLDER")
+            .onChange(of: viewModel.searchText) { _, _ in
+                viewModel.searchItems()
+            }
+            .disabled(!viewModel.featuresTask)
             .overlay(alignment: .bottomTrailing) {
-                if viewModel.featuresTask {
+                if viewModel.featuresTask, !viewModel.isInSearchMode {
                     addTaskButton
                 }
             }

@@ -344,6 +344,23 @@
         }
       }
     },
+    "SEARCH_PLACEHOLDER" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search for a task"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rechercher une tâche"
+          }
+        }
+      }
+    },
     "TASK_TODO" : {
       "extractionState" : "manual",
       "localizations" : {
