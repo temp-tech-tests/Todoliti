@@ -21,19 +21,7 @@ struct HomeScreen: View {
             }
             .overlay(alignment: .bottomTrailing) {
                 if viewModel.featuresTask {
-                    Button {
-                        showAlert = true
-                    } label: {
-                        Image(systemName: "plus")
-                            .padding()
-                            .foregroundStyle(.white)
-                            .background {
-                                Circle()
-                                    .fill(.blue)
-                            }
-                            .padding()
-                            .shadow(radius: 3)
-                    }.buttonStyle(PlainButtonStyle())
+                    addTaskButton
                 }
             }
             .overlay {
@@ -48,6 +36,22 @@ struct HomeScreen: View {
                 show: $showAlert,
                 onSubmit: submit)
         }
+    }
+
+    private var addTaskButton: some View {
+        Button {
+            showAlert = true
+        } label: {
+            Image(systemName: "plus")
+                .padding()
+                .foregroundStyle(.white)
+                .background {
+                    Circle()
+                        .fill(.blue)
+                }
+                .padding()
+                .shadow(radius: 3)
+        }.buttonStyle(PlainButtonStyle())
     }
 
     private func submit() {
