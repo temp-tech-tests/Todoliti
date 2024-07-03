@@ -53,6 +53,7 @@ public final class TodoService {
             let creatingEntity = NSManagedObject(entity: entity, insertInto: context)
             let createdDate = Date.now.timeIntervalSince1970
 
+            creatingEntity.setValue(UUID(), forKey: "identifier")
             creatingEntity.setValue(title, forKey: "title")
             creatingEntity.setValue(details, forKey: "details")
             creatingEntity.setValue(createdDate, forKey: "createdDate")
