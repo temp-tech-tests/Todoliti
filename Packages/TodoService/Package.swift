@@ -11,7 +11,8 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "TodoService"),
+            name: "TodoService",
+            resources: [.process("Resources")]),
         .testTarget(
             name: "TodoServiceTests",
             dependencies: ["TodoService"]),
