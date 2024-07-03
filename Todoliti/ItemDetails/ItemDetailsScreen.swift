@@ -2,8 +2,8 @@ import SwiftUI
 
 struct ItemDetailsScreen: View {
 
+    @Binding var path: [TodoItem]
     @State private var showDeletionConfirmationDialog: Bool = false
-
     @EnvironmentObject private var viewModel: ItemDetailsScreenViewModel
 
     var body: some View {
@@ -19,9 +19,12 @@ struct ItemDetailsScreen: View {
 
             }.textFieldStyle(.roundedBorder)
         }
-        .confirmationDialog("Supprimer ?", isPresented: $showDeletionConfirmationDialog) {
-            Button("Confirmer", role: .destructive) {
-                // ..
+        .confirmationDialog("ITEM_SUPPRESSION_CONFIRMATION_TITLE", isPresented: $showDeletionConfirmationDialog) {
+            Button("ITEM_DETAILS_CONFIRMATION_DELETE", role: .destructive) {
+                Task {
+                    await viewModel.deleteItem()
+                    path = []
+                }
             }
         }
         .toolbar {
@@ -35,9 +38,9 @@ struct ItemDetailsScreen: View {
         }
         .safeAreaInset(edge: .bottom) {
             Button {
-                // ..
+                path = []
             } label: {
-                Text("Terminer")
+                Text("ITEM_DETAILS_FINISH")
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(BorderedProminentButtonStyle())
@@ -64,7 +67,7 @@ struct ItemDetailsScreen: View {
 
 #Preview {
     NavigationStack {
-        ItemDetailsScreen()
+        ItemDetailsScreen(path: .constant([]))
     }.environmentObject(ItemDetailsScreenViewModel(todoItem: TodoItem(
         id: UUID(),
         title: "Appeler le garage et demander quand va-t'on pouvoir récupérer la voiture",

@@ -137,6 +137,23 @@
         }
       }
     },
+    "ITEM_DETAILS_CONFIRMATION_DELETE" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete the task"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer la tâche"
+          }
+        }
+      }
+    },
     "ITEM_DETAILS_DETAILS_PLACEHOLDER" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -171,6 +188,23 @@
         }
       }
     },
+    "ITEM_DETAILS_FINISH" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminer"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Terminer"
+          }
+        }
+      }
+    },
     "ITEM_DETAILS_TITLE_PLACEHOLDER" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -201,6 +235,34 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "A faire"
+          }
+        }
+      }
+    },
+    "ITEM_SUPPRESSION_CONFIRMATION_TITLE" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer ?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Supprimer ?"
+          }
+        }
+      }
+    },
+    "Supprimer ?" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer ?"
           }
         }
       }

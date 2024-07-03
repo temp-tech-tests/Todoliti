@@ -23,6 +23,14 @@ final class ItemDetailsScreenViewModel: ObservableObject {
         self.manager = manager
     }
 
+    func deleteItem() async {
+        do {
+            try await manager.deleteTask(model: editingItem.itemModel)
+        } catch {
+            // Handle error
+        }
+    }
+
     func updateModel() {
         Task {
             try await manager.updateTask(model: TodoItem(

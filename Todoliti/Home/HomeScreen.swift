@@ -4,12 +4,12 @@ struct HomeScreen: View {
 
     @State private var newTaskName: String = ""
     @State private var showAlert: Bool = false
-    @State private var selectedItem: TodoItem?
+    @State private var path: [TodoItem] = []
 
     @EnvironmentObject private var viewModel: HomeScreenViewModel
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             List(viewModel.items) { item in
                 ItemCell(model: item) { cellAction in
                     handleCellAction(item: item, action: cellAction)
@@ -43,8 +43,8 @@ struct HomeScreen: View {
                 text: $newTaskName,
                 show: $showAlert,
                 onSubmit: submit)
-            .navigationDestination(item: $selectedItem) { item in
-                ItemDetailsScreen()
+            .navigationDestination(for: TodoItem.self) { item in
+                ItemDetailsScreen(path: $path)
                     .environmentObject(ItemDetailsScreenViewModel(todoItem: item))
             }
         }
@@ -98,7 +98,7 @@ struct HomeScreen: View {
         case .checked:
             viewModel.toggleItemState(item)
         case .tapped:
-            selectedItem = item
+            path = [item]
         }
     }
 }
