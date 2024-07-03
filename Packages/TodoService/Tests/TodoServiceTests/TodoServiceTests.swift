@@ -87,14 +87,20 @@ final class TodoServiceTests: XCTestCase {
         XCTAssertEqual(entities.count, 1)
         XCTAssertEqual(entities[0].title, "Test")
         XCTAssertEqual(entities[0].details, "Test details")
+        XCTAssertEqual(entities[0].status, .todo)
 
-        let newEntity = UpdateEntityModel(identifier: entities[0].identifier, title: "New title", details: "New details")
+        let newEntity = UpdateEntityModel(
+            identifier: entities[0].identifier,
+            title: "New title",
+            details: "New details",
+            coreStatus: .completed)
 
         try await sut.updateEntity(updateEntity: newEntity)
         let updatedEntities = try await sut.retrieveItems()
 
         XCTAssertEqual(updatedEntities[0].title, "New title")
         XCTAssertEqual(updatedEntities[0].details, "New details")
+        XCTAssertEqual(updatedEntities[0].status, .completed)
     }
 
     func testUpdatingNonExistingItem() async throws {
@@ -104,7 +110,8 @@ final class TodoServiceTests: XCTestCase {
             try await sut.updateEntity(updateEntity: UpdateEntityModel(
                 identifier: UUID(),
                 title: "test",
-                details: "test"))
+                details: "test",
+                coreStatus: .todo))
 
             XCTFail("Sut should no be able to update non existing item")
         } catch let error as TodoServiceError {
@@ -125,10 +132,12 @@ private struct UpdateEntityModel: CoreUpdateEntity {
     var identifier: UUID
     var title: String
     var details: String
+    var coreStatus: CoreTodoItemStatus
 
-    init(identifier: UUID, title: String, details: String) {
+    init(identifier: UUID, title: String, details: String, coreStatus: CoreTodoItemStatus) {
         self.identifier = identifier
         self.title = title
         self.details = details
+        self.coreStatus = coreStatus
     }
 }

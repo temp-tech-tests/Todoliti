@@ -57,6 +57,7 @@ public final class TodoService {
             creatingEntity.setValue(title, forKey: "title")
             creatingEntity.setValue(details, forKey: "details")
             creatingEntity.setValue(createdDate, forKey: "createdDate")
+            creatingEntity.setValue(CoreTodoItemStatus.todo.rawValue, forKey: "status")
 
             do {
                 try context.save()
@@ -114,6 +115,7 @@ public final class TodoService {
 
                     updatingEntity.setValue(updateEntity.title, forKey: "title")
                     updatingEntity.setValue(updateEntity.details, forKey: "details")
+                    updatingEntity.setValue(updateEntity.coreStatus.rawValue, forKey: "status")
 
                     try context.save()
                 }
