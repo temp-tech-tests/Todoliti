@@ -52,6 +52,11 @@ struct HomeScreen: View {
 
     private func submit() {
         viewModel.createItem(title: newTaskName)
+        resetTaskName()
+    }
+
+    private func resetTaskName() {
+        newTaskName = ""
     }
 }
 
