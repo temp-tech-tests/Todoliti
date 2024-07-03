@@ -11,6 +11,9 @@ struct NewTaskAlertModifier: ViewModifier {
         content
             .alert("HOME_CREATE_TASK_TITLE", isPresented: $show) {
                 TextField("HOME_CREATE_TASK_TEXT_PLACEHOLDER", text: $text)
+                Button("CANCEL") {
+                    show = false
+                }
                 Button("VALIDATE", action: onSubmit)
             } message: {
                 Text("HOME_CREATE_TASK_MESSAGE")
