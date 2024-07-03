@@ -100,7 +100,7 @@ public final class TodoService {
     ///     - updateEntity: Some object conforming to ``CoreUpdateEntity`` protocol.
     ///
     /// - Throws: Method can throw a ``TodoServiceError``.
-    func updateEntity(updateEntity: some CoreUpdateEntity) async throws {
+    public func updateEntity(updateEntity: some CoreUpdateEntity) async throws {
         let context = persistentContainer.newBackgroundContext()
         try await context.perform {
             let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constant.todoItemEntityName)

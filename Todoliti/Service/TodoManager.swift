@@ -4,6 +4,7 @@ import TodoService
 protocol TodoManagerRepresentable {
     func createTask(title: String) async throws
     func loadTasks() async throws -> [TodoItem]
+    func updateTask(model: TodoItem) async throws
 }
 
 final class TodoManager: TodoManagerRepresentable {
@@ -11,6 +12,7 @@ final class TodoManager: TodoManagerRepresentable {
     enum TodoManagerError: Error {
         case failedToCreateItem
         case failedToLoadItem
+        case failedToUpdateItem
     }
 
     private let service: TodoService
@@ -34,6 +36,24 @@ final class TodoManager: TodoManagerRepresentable {
         } catch {
             throw TodoManagerError.failedToLoadItem
         }
+    }
+
+    func updateTask(model: TodoItem) async throws {
+        do {
+            try await service.updateEntity(updateEntity: model)
+        } catch {
+            throw TodoManagerError.failedToUpdateItem
+        }
+    }
+}
+
+extension TodoItem: CoreUpdateEntity {
+    var identifier: UUID {
+        id
+    }
+
+    var coreStatus: CoreTodoItemStatus {
+        .init(rawValue: status.rawValue) ?? .todo
     }
 }
 

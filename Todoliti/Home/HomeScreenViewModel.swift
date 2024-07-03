@@ -19,9 +19,25 @@ final class HomeScreenViewModel: ObservableObject {
     func loadItems() async {
         do {
             items = try await manager.loadTasks()
-            print(items)
         } catch {
             // Handle error
+        }
+    }
+
+    func toggleItemState(_ item: TodoItem) {
+        Task {
+            let updatingModel = TodoItem(
+                id: item.id,
+                title: item.title,
+                details: item.details,
+                createdDate: item.createdDate,
+                status: item.status.toggle())
+            do {
+                try await manager.updateTask(model: updatingModel)
+                await loadItems()
+            } catch {
+                /// Handle error
+            }
         }
     }
 

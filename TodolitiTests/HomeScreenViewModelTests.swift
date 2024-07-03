@@ -24,4 +24,8 @@ private class MockManager: TodoManagerRepresentable {
     func loadTasks() async throws -> [TodoItem] {
         []
     }
+
+    func updateTask(model: TodoItem) async throws {
+        // ..
+    }
 }

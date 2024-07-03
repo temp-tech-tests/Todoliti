@@ -10,8 +10,9 @@ struct HomeScreen: View {
     var body: some View {
         NavigationStack {
             List(viewModel.items) { item in
-                ItemCell(model: item) { _ in
-                    // ..
+                ItemCell(model: item) { cellAction in
+                    handleCellAction(item: item, action: cellAction)
+                }
                 }
             }
             .listStyle(.plain)
@@ -62,6 +63,15 @@ struct HomeScreen: View {
     private func resetTaskName() {
         newTaskName = ""
     }
+
+    private func handleCellAction(item: TodoItem, action: ItemCell.ItemCellAction) {
+        switch action {
+        case .checked:
+            viewModel.toggleItemState(item)
+        case .tapped:
+            break
+        }
+    }
 }
 
 #Preview {
@@ -74,6 +84,11 @@ struct HomeScreen: View {
         
         func loadTasks() async throws -> [TodoItem] {
             return tasks
+        }
+
+        func updateTask(model: TodoItem) async throws {
+            guard let index = tasks.firstIndex(where: {$0.id == model.id}) else { return }
+            tasks[index] = model
         }
     }
 
