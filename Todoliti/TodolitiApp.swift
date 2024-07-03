@@ -12,6 +12,7 @@ struct TodolitiApp: App {
     var body: some Scene {
         WindowGroup {
             HomeScreen()
+                .environmentObject(HomeScreenViewModel())
         }
     }
 }
