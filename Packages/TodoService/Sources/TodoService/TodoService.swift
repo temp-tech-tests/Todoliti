@@ -64,4 +64,24 @@ public final class TodoService {
             }
         }
     }
+
+    /// Use this method to retrieve stored items.
+    ///
+    /// - Returns: An array of ``CoreTodoItem``.
+    ///
+    /// - Throws: Method can throw an error defined in ``TodoServiceError``.
+    public func retrieveItems() async throws -> [CoreTodoItem] {
+        let context = persistentContainer.newBackgroundContext()
+
+        return try await context.perform {
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constant.todoItemEntityName)
+
+            do {
+                let entities = try context.fetch(fetchRequest)
+                return entities.compactMap { CoreTodoItem(managedObject: $0) }
+            } catch {
+                throw TodoServiceError.failedToFetchEntities
+            }
+        }
+    }
 }
