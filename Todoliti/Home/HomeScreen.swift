@@ -1,6 +1,10 @@
 import SwiftUI
 
 struct HomeScreen: View {
+
+    @State private var newTaskName: String = ""
+    @State private var showAlert: Bool = false
+
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -9,6 +13,12 @@ struct HomeScreen: View {
             .navigationTitle("HOME_WELCOME")
             .overlay {
                 noTaskContentView
+            }
+            .alert("HOME_CREATE_TASK_TITLE", isPresented: $showAlert) {
+                TextField("HOME_CREATE_TASK_TEXT_PLACEHOLDER", text: $newTaskName)
+                Button("VALIDATE", action: submit)
+            } message: {
+                Text("HOME_CREATE_TASK_MESSAGE")
             }
         }
     }
@@ -30,12 +40,16 @@ struct HomeScreen: View {
                 .multilineTextAlignment(.center)
 
             Button {
-                // ..
+                showAlert = true
             } label: {
                 Label("HOME_NEW_TASK", systemImage: "plus.circle.fill")
             }.buttonStyle(BorderedProminentButtonStyle())
 
         }.padding(26)
+    }
+
+    private func submit() {
+        
     }
 }
 
