@@ -12,7 +12,7 @@ struct ItemCell: View {
 
     var body: some View {
         HStack {
-            Group {
+            HStack {
                 VStack(alignment: .leading) {
                     Text(model.createdDate.formatted(date: .complete, time: .omitted))
                         .font(.caption)
@@ -38,9 +38,9 @@ struct ItemCell: View {
                 handler(.checked)
             } label: {
                 checkBoxImage
+                    .padding()
             }
-
-        }
+        }.buttonStyle(PlainButtonStyle())
     }
 
     @ViewBuilder
