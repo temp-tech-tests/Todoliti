@@ -11,7 +11,7 @@
 		A0B608692C352D2E00DB0D34 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608682C352D2E00DB0D34 /* HomeScreen.swift */; };
 		A0B6086B2C352D3000DB0D34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0B6086A2C352D3000DB0D34 /* Assets.xcassets */; };
 		A0B6086E2C352D3000DB0D34 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0B6086D2C352D3000DB0D34 /* Preview Assets.xcassets */; };
-		A0B608782C352D3000DB0D34 /* TodolitiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608772C352D3000DB0D34 /* TodolitiTests.swift */; };
+		A0B608782C352D3000DB0D34 /* HomeScreenViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608772C352D3000DB0D34 /* HomeScreenViewModelTests.swift */; };
 		A0B608822C352D3000DB0D34 /* TodolitiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608812C352D3000DB0D34 /* TodolitiUITests.swift */; };
 		A0B608842C352D3000DB0D34 /* TodolitiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608832C352D3000DB0D34 /* TodolitiUITestsLaunchTests.swift */; };
 		A0B608962C35474200DB0D34 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608952C35474200DB0D34 /* ItemCell.swift */; };
@@ -49,7 +49,7 @@
 		A0B6086A2C352D3000DB0D34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0B6086D2C352D3000DB0D34 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A0B608732C352D3000DB0D34 /* TodolitiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodolitiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0B608772C352D3000DB0D34 /* TodolitiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodolitiTests.swift; sourceTree = "<group>"; };
+		A0B608772C352D3000DB0D34 /* HomeScreenViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModelTests.swift; sourceTree = "<group>"; };
 		A0B6087D2C352D3000DB0D34 /* TodolitiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodolitiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B608812C352D3000DB0D34 /* TodolitiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodolitiUITests.swift; sourceTree = "<group>"; };
 		A0B608832C352D3000DB0D34 /* TodolitiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodolitiUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		A0B608762C352D3000DB0D34 /* TodolitiTests */ = {
 			isa = PBXGroup;
 			children = (
-				A0B608772C352D3000DB0D34 /* TodolitiTests.swift */,
+				A0B608772C352D3000DB0D34 /* HomeScreenViewModelTests.swift */,
 			);
 			path = TodolitiTests;
 			sourceTree = "<group>";
@@ -347,7 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0B608782C352D3000DB0D34 /* TodolitiTests.swift in Sources */,
+				A0B608782C352D3000DB0D34 /* HomeScreenViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

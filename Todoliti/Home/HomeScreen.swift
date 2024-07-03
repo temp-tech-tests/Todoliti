@@ -5,6 +5,8 @@ struct HomeScreen: View {
     @State private var newTaskName: String = ""
     @State private var showAlert: Bool = false
 
+    @StateObject private var viewModel = HomeScreenViewModel()
+
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -24,7 +26,7 @@ struct HomeScreen: View {
     }
 
     private func submit() {
-
+        viewModel.createItem(title: newTaskName)
     }
 }
 
