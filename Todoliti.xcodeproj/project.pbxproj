@@ -21,6 +21,8 @@
 		A0B608A02C354AE400DB0D34 /* TodoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B6089F2C354AE400DB0D34 /* TodoManager.swift */; };
 		A0B608A32C354C2D00DB0D34 /* TodoService in Frameworks */ = {isa = PBXBuildFile; productRef = A0B608A22C354C2D00DB0D34 /* TodoService */; };
 		A0B608A62C354D8E00DB0D34 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A0B608A52C354D8E00DB0D34 /* Localizable.xcstrings */; };
+		A0B608A82C35514800DB0D34 /* NoTaskContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608A72C35514800DB0D34 /* NoTaskContentView.swift */; };
+		A0B608AA2C3551B800DB0D34 /* NewTaskAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608A92C3551B800DB0D34 /* NewTaskAlertModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		A0B6089C2C354A9500DB0D34 /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
 		A0B6089F2C354AE400DB0D34 /* TodoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoManager.swift; sourceTree = "<group>"; };
 		A0B608A52C354D8E00DB0D34 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		A0B608A72C35514800DB0D34 /* NoTaskContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTaskContentView.swift; sourceTree = "<group>"; };
+		A0B608A92C3551B800DB0D34 /* NewTaskAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskAlertModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				A0B608682C352D2E00DB0D34 /* HomeScreen.swift */,
+				A0B608A92C3551B800DB0D34 /* NewTaskAlertModifier.swift */,
+				A0B608A72C35514800DB0D34 /* NoTaskContentView.swift */,
 				A0B6089C2C354A9500DB0D34 /* HomeScreenViewModel.swift */,
 				A0B608942C35473200DB0D34 /* ItemCell */,
 			);
@@ -325,9 +331,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0B608A82C35514800DB0D34 /* NoTaskContentView.swift in Sources */,
 				A0B608692C352D2E00DB0D34 /* HomeScreen.swift in Sources */,
 				A0B6089D2C354A9500DB0D34 /* HomeScreenViewModel.swift in Sources */,
 				A0B6089B2C3547A500DB0D34 /* TodoItemStatus.swift in Sources */,
+				A0B608AA2C3551B800DB0D34 /* NewTaskAlertModifier.swift in Sources */,
 				A0B608672C352D2E00DB0D34 /* TodolitiApp.swift in Sources */,
 				A0B608992C35478500DB0D34 /* TodoItem.swift in Sources */,
 				A0B608962C35474200DB0D34 /* ItemCell.swift in Sources */,
