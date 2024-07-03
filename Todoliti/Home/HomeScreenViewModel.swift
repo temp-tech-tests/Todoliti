@@ -7,6 +7,7 @@ final class HomeScreenViewModel: ObservableObject {
         case date, status
     }
 
+    @Published var showError: Bool = false
     @Published var sortingOption: SortingOption = .date
     @Published var items: [TodoItem] = []
     @Published var hasError: Bool = false
@@ -26,7 +27,7 @@ final class HomeScreenViewModel: ObservableObject {
             items = try await manager.loadTasks()
             updateSortingOption(sortingOption)
         } catch {
-            // Handle error
+            showError = true
         }
     }
 
@@ -51,7 +52,7 @@ final class HomeScreenViewModel: ObservableObject {
                 try await manager.updateTask(model: updatingModel)
                 await loadItems()
             } catch {
-                /// Handle error
+                showError = true
             }
         }
     }
@@ -62,7 +63,7 @@ final class HomeScreenViewModel: ObservableObject {
                 try await manager.deleteTask(model: item)
                 await loadItems()
             } catch {
-                // Handle error
+                showError = true
             }
         }
     }
@@ -80,7 +81,7 @@ final class HomeScreenViewModel: ObservableObject {
                 try await manager.createTask(title: title)
                 await loadItems()
             } catch {
-                // handle error
+                showError = true
             }
         }
     }

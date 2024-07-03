@@ -3,6 +3,7 @@ import Foundation
 @MainActor
 final class ItemDetailsScreenViewModel: ObservableObject {
 
+    @Published var showError: Bool = false
     @Published var editingItem: EditingItem
 
     struct EditingItem: Equatable {
@@ -27,18 +28,22 @@ final class ItemDetailsScreenViewModel: ObservableObject {
         do {
             try await manager.deleteTask(model: editingItem.itemModel)
         } catch {
-            // Handle error
+            showError = true
         }
     }
 
     func updateModel() {
         Task {
-            try await manager.updateTask(model: TodoItem(
-                id: editingItem.itemModel.id,
-                title: editingItem.editingTitle,
-                details: editingItem.editingDetails.isEmpty ? nil : editingItem.editingDetails,
-                createdDate: editingItem.itemModel.createdDate,
-                status: editingItem.itemModel.status))
+            do {
+                try await manager.updateTask(model: TodoItem(
+                    id: editingItem.itemModel.id,
+                    title: editingItem.editingTitle,
+                    details: editingItem.editingDetails.isEmpty ? nil : editingItem.editingDetails,
+                    createdDate: editingItem.itemModel.createdDate,
+                    status: editingItem.itemModel.status))
+            } catch {
+                showError = true
+            }
         }
     }
 }

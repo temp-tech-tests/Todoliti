@@ -38,6 +38,40 @@
         }
       }
     },
+    "ERROR_MESSAGE_DEFAULT" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An unexpected error occurred while performing your request. Please try agin later."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Une erreur est survenue, veuillez réessayer plus tard"
+          }
+        }
+      }
+    },
+    "ERROR_TITLE_DEFAULT" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error occured"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Une erreur est survenue"
+          }
+        }
+      }
+    },
     "HOME_CREATE_TASK_MESSAGE" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -326,6 +360,9 @@
           }
         }
       }
+    },
+    "Toggle overlay" : {
+
     },
     "VALIDATE" : {
       "extractionState" : "manual",

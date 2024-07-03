@@ -26,6 +26,8 @@
 		A0B608AD2C35846500DB0D34 /* ItemDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608AC2C35846500DB0D34 /* ItemDetailsScreen.swift */; };
 		A0B608AF2C358BB400DB0D34 /* ItemDetailsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608AE2C358BB400DB0D34 /* ItemDetailsScreenViewModel.swift */; };
 		A0B608B32C3597B300DB0D34 /* ItemDetailsCheckMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608B22C3597B300DB0D34 /* ItemDetailsCheckMarkView.swift */; };
+		A0B608B62C35A4FA00DB0D34 /* ErrorOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608B52C35A4FA00DB0D34 /* ErrorOverlay.swift */; };
+		A0B608B82C35A80F00DB0D34 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608B72C35A80F00DB0D34 /* ErrorModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		A0B608AC2C35846500DB0D34 /* ItemDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsScreen.swift; sourceTree = "<group>"; };
 		A0B608AE2C358BB400DB0D34 /* ItemDetailsScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsScreenViewModel.swift; sourceTree = "<group>"; };
 		A0B608B22C3597B300DB0D34 /* ItemDetailsCheckMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsCheckMarkView.swift; sourceTree = "<group>"; };
+		A0B608B52C35A4FA00DB0D34 /* ErrorOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorOverlay.swift; sourceTree = "<group>"; };
+		A0B608B72C35A80F00DB0D34 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,7 @@
 		A0B608652C352D2E00DB0D34 /* Todoliti */ = {
 			isa = PBXGroup;
 			children = (
+				A0B608B42C35A4F000DB0D34 /* ErrorOverlay */,
 				A0B608AB2C35844B00DB0D34 /* ItemDetails */,
 				A0B608A42C354D8400DB0D34 /* Resources */,
 				A0B6089E2C354ADE00DB0D34 /* Service */,
@@ -179,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				A0B608982C35478500DB0D34 /* TodoItem.swift */,
+				A0B608B72C35A80F00DB0D34 /* ErrorModel.swift */,
 				A0B6089A2C3547A500DB0D34 /* TodoItemStatus.swift */,
 			);
 			path = Models;
@@ -208,6 +214,14 @@
 				A0B608AE2C358BB400DB0D34 /* ItemDetailsScreenViewModel.swift */,
 			);
 			path = ItemDetails;
+			sourceTree = "<group>";
+		};
+		A0B608B42C35A4F000DB0D34 /* ErrorOverlay */ = {
+			isa = PBXGroup;
+			children = (
+				A0B608B52C35A4FA00DB0D34 /* ErrorOverlay.swift */,
+			);
+			path = ErrorOverlay;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,10 +362,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0B608B82C35A80F00DB0D34 /* ErrorModel.swift in Sources */,
 				A0B608A82C35514800DB0D34 /* NoTaskContentView.swift in Sources */,
 				A0B608AF2C358BB400DB0D34 /* ItemDetailsScreenViewModel.swift in Sources */,
 				A0B608692C352D2E00DB0D34 /* HomeScreen.swift in Sources */,
 				A0B6089D2C354A9500DB0D34 /* HomeScreenViewModel.swift in Sources */,
+				A0B608B62C35A4FA00DB0D34 /* ErrorOverlay.swift in Sources */,
 				A0B6089B2C3547A500DB0D34 /* TodoItemStatus.swift in Sources */,
 				A0B608AA2C3551B800DB0D34 /* NewTaskAlertModifier.swift in Sources */,
 				A0B608672C352D2E00DB0D34 /* TodolitiApp.swift in Sources */,

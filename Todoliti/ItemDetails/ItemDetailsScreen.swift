@@ -64,6 +64,7 @@ struct ItemDetailsScreen: View {
         }
         .navigationTitle(viewModel.editingItem.editingTitle)
         .padding(.horizontal)
+        .errorToast(model: .defaultError, show: $viewModel.showError)
     }
 
     private func textField(title: LocalizedStringKey, _ text: Binding<String>) -> some View {

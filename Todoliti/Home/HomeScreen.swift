@@ -58,6 +58,7 @@ struct HomeScreen: View {
                     }
                 }
             }
+            .errorToast(model: .defaultError, show: $viewModel.showError)
             .newTaskAlert(
                 text: $newTaskName,
                 show: $showAlert,
