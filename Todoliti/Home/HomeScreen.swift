@@ -44,7 +44,8 @@ struct HomeScreen: View {
                 show: $showAlert,
                 onSubmit: submit)
             .navigationDestination(item: $selectedItem) { item in
-                ItemDetailsScreen(itemModel: item)
+                ItemDetailsScreen()
+                    .environmentObject(ItemDetailsScreenViewModel(todoItem: item))
             }
         }
     }

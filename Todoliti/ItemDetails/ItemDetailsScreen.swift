@@ -2,20 +2,7 @@ import SwiftUI
 
 struct ItemDetailsScreen: View {
 
-    private struct EditingItem: Equatable {
-        var itemModel: TodoItem
-        var editingTitle: String
-        var editingDetails: String
-    }
-
-    @State private var editingModel: EditingItem
-
-    init(itemModel: TodoItem) {
-        _editingModel = .init(initialValue: EditingItem(
-            itemModel: itemModel,
-            editingTitle: itemModel.title,
-            editingDetails: itemModel.details ?? ""))
-    }
+    @EnvironmentObject private var viewModel: ItemDetailsScreenViewModel
 
     var body: some View {
         ScrollView {
@@ -25,8 +12,8 @@ struct ItemDetailsScreen: View {
                     .foregroundStyle(.secondary)
                 Divider()
 
-                textField(title: "ITEM_DETAILS_TITLE_PLACEHOLDER", $editingModel.editingTitle)
-                textField(title: "ITEM_DETAILS_DETAILS_PLACEHOLDER", largeEdit: true, $editingModel.editingDetails)
+                textField(title: "ITEM_DETAILS_TITLE_PLACEHOLDER", $viewModel.editingItem.editingTitle)
+                textField(title: "ITEM_DETAILS_DETAILS_PLACEHOLDER", largeEdit: true, $viewModel.editingItem.editingDetails)
 
             }.textFieldStyle(.roundedBorder)
         }
@@ -52,7 +39,7 @@ struct ItemDetailsScreen: View {
                 .buttonStyle(BorderedProminentButtonStyle())
             }
         }
-        .navigationTitle(editingModel.editingTitle)
+        .navigationTitle(viewModel.editingItem.editingTitle)
         .padding()
     }
 
@@ -75,11 +62,11 @@ struct ItemDetailsScreen: View {
 
 #Preview {
     NavigationStack {
-        ItemDetailsScreen(itemModel: TodoItem(
-            id: UUID(),
-            title: "Appeler le garage et demander quand va-t'on pouvoir récupérer la voiture",
-            details: nil,
-            createdDate: Date(),
-            status: .todo))
-    }
+        ItemDetailsScreen()
+    }.environmentObject(ItemDetailsScreenViewModel(todoItem: TodoItem(
+        id: UUID(),
+        title: "Appeler le garage et demander quand va-t'on pouvoir récupérer la voiture",
+        details: nil,
+        createdDate: Date(),
+        status: .todo)))
 }

@@ -24,6 +24,7 @@
 		A0B608A82C35514800DB0D34 /* NoTaskContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608A72C35514800DB0D34 /* NoTaskContentView.swift */; };
 		A0B608AA2C3551B800DB0D34 /* NewTaskAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608A92C3551B800DB0D34 /* NewTaskAlertModifier.swift */; };
 		A0B608AD2C35846500DB0D34 /* ItemDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608AC2C35846500DB0D34 /* ItemDetailsScreen.swift */; };
+		A0B608AF2C358BB400DB0D34 /* ItemDetailsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608AE2C358BB400DB0D34 /* ItemDetailsScreenViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		A0B608A72C35514800DB0D34 /* NoTaskContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTaskContentView.swift; sourceTree = "<group>"; };
 		A0B608A92C3551B800DB0D34 /* NewTaskAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskAlertModifier.swift; sourceTree = "<group>"; };
 		A0B608AC2C35846500DB0D34 /* ItemDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsScreen.swift; sourceTree = "<group>"; };
+		A0B608AE2C358BB400DB0D34 /* ItemDetailsScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsScreenViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				A0B608AC2C35846500DB0D34 /* ItemDetailsScreen.swift */,
+				A0B608AE2C358BB400DB0D34 /* ItemDetailsScreenViewModel.swift */,
 			);
 			path = ItemDetails;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0B608A82C35514800DB0D34 /* NoTaskContentView.swift in Sources */,
+				A0B608AF2C358BB400DB0D34 /* ItemDetailsScreenViewModel.swift in Sources */,
 				A0B608692C352D2E00DB0D34 /* HomeScreen.swift in Sources */,
 				A0B6089D2C354A9500DB0D34 /* HomeScreenViewModel.swift in Sources */,
 				A0B6089B2C3547A500DB0D34 /* TodoItemStatus.swift in Sources */,
