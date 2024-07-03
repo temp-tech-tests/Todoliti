@@ -20,10 +20,12 @@ struct ItemCell: View {
                         .foregroundStyle(.secondary)
                     Text(model.title)
                         .font(.subheadline)
-                    Text(model.details)
-                        .lineLimit(1)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
+                    if let details = model.details {
+                        Text(details)
+                            .lineLimit(1)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
                 }
                 Spacer(minLength: 32)
             }
@@ -56,6 +58,7 @@ struct ItemCell: View {
 #Preview {
     VStack(spacing: 24) {
         ItemCell(model: TodoItem(
+            id: UUID(),
             title: "Faire les courses",
             details: "Aller faire les courses chez monoprix et aussi passer chez bricorama",
             createdDate: Date(),
@@ -69,6 +72,7 @@ struct ItemCell: View {
             }
 
         ItemCell(model: TodoItem(
+            id: UUID(),
             title: "Promener le chien",
             details: "",
             createdDate: Date(),

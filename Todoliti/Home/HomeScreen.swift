@@ -9,13 +9,21 @@ struct HomeScreen: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView {
-
+            List(viewModel.items) { item in
+                ItemCell(model: item) { _ in
+                    // ..
+                }
             }
+            .listStyle(.plain)
             .navigationTitle("HOME_WELCOME")
+            .task {
+                await viewModel.loadItems()
+            }
             .overlay {
-                NoTaskContentView {
-                    showAlert = true
+                if !viewModel.featuresTask {
+                    NoTaskContentView {
+                        showAlert = true
+                    }
                 }
             }
             .newTaskAlert(
