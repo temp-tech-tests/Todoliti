@@ -3,6 +3,11 @@ import Foundation
 @MainActor
 final class HomeScreenViewModel: ObservableObject {
     
+    enum SortingOption {
+        case date, status
+    }
+
+    @Published var sortingOption: SortingOption = .date
     @Published var items: [TodoItem] = []
     @Published var hasError: Bool = false
 
@@ -19,8 +24,18 @@ final class HomeScreenViewModel: ObservableObject {
     func loadItems() async {
         do {
             items = try await manager.loadTasks()
+            updateSortingOption(sortingOption)
         } catch {
             // Handle error
+        }
+    }
+
+    func updateSortingOption(_ sortingOption: SortingOption) {
+        switch sortingOption {
+        case .date:
+            items = items.sorted(by: { $0.createdDate > $1.createdDate })
+        case .status:
+            items = items.sorted(by: { $0.status < $1.status })
         }
     }
 

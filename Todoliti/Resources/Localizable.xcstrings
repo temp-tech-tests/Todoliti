@@ -123,6 +123,40 @@
         }
       }
     },
+    "HOME_SORTING_COMPLETE" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "By completion status"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Tâches terminées"
+          }
+        }
+      }
+    },
+    "HOME_SORTING_DATES" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "By creation date"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Date de création"
+          }
+        }
+      }
+    },
     "HOME_WELCOME" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -271,17 +305,6 @@
         "fr" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : "Supprimer ?"
-          }
-        }
-      }
-    },
-    "Supprimer ?" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
             "value" : "Supprimer ?"
           }
         }

@@ -21,6 +21,25 @@ struct HomeScreen: View {
                     doneButton(item: item)
                 }
             }
+            .toolbar {
+                if viewModel.featuresTask {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Menu {
+                            Picker(selection: $viewModel.sortingOption, label: Text("")) {
+                                Text("HOME_SORTING_COMPLETE")
+                                    .tag(HomeScreenViewModel.SortingOption.status)
+                                Text("HOME_SORTING_DATES")
+                                    .tag(HomeScreenViewModel.SortingOption.date)
+                            }
+                        } label: {
+                            Label("", systemImage: "ellipsis.circle")
+                        }
+                    }
+                }
+            }
+            .onChange(of: viewModel.sortingOption) { _, newValue in
+                viewModel.updateSortingOption(newValue)
+            }
             .animation(.easeIn, value: viewModel.items)
             .listStyle(.plain)
             .navigationTitle("HOME_WELCOME")
