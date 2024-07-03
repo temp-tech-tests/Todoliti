@@ -14,6 +14,9 @@
 		A0B608782C352D3000DB0D34 /* TodolitiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608772C352D3000DB0D34 /* TodolitiTests.swift */; };
 		A0B608822C352D3000DB0D34 /* TodolitiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608812C352D3000DB0D34 /* TodolitiUITests.swift */; };
 		A0B608842C352D3000DB0D34 /* TodolitiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608832C352D3000DB0D34 /* TodolitiUITestsLaunchTests.swift */; };
+		A0B608962C35474200DB0D34 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608952C35474200DB0D34 /* ItemCell.swift */; };
+		A0B608992C35478500DB0D34 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608982C35478500DB0D34 /* TodoItem.swift */; };
+		A0B6089B2C3547A500DB0D34 /* TodoItemStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B6089A2C3547A500DB0D34 /* TodoItemStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		A0B6087D2C352D3000DB0D34 /* TodolitiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodolitiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B608812C352D3000DB0D34 /* TodolitiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodolitiUITests.swift; sourceTree = "<group>"; };
 		A0B608832C352D3000DB0D34 /* TodolitiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodolitiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A0B608952C35474200DB0D34 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		A0B608982C35478500DB0D34 /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
+		A0B6089A2C3547A500DB0D34 /* TodoItemStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +100,10 @@
 		A0B608652C352D2E00DB0D34 /* Todoliti */ = {
 			isa = PBXGroup;
 			children = (
+				A0B608972C35477600DB0D34 /* Models */,
 				A0B608662C352D2E00DB0D34 /* TodolitiApp.swift */,
 				A0B608682C352D2E00DB0D34 /* ContentView.swift */,
+				A0B608932C35472500DB0D34 /* Home */,
 				A0B6086A2C352D3000DB0D34 /* Assets.xcassets */,
 				A0B6086C2C352D3000DB0D34 /* Preview Content */,
 			);
@@ -125,6 +133,31 @@
 				A0B608832C352D3000DB0D34 /* TodolitiUITestsLaunchTests.swift */,
 			);
 			path = TodolitiUITests;
+			sourceTree = "<group>";
+		};
+		A0B608932C35472500DB0D34 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A0B608942C35473200DB0D34 /* ItemCell */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A0B608942C35473200DB0D34 /* ItemCell */ = {
+			isa = PBXGroup;
+			children = (
+				A0B608952C35474200DB0D34 /* ItemCell.swift */,
+			);
+			path = ItemCell;
+			sourceTree = "<group>";
+		};
+		A0B608972C35477600DB0D34 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A0B608982C35478500DB0D34 /* TodoItem.swift */,
+				A0B6089A2C3547A500DB0D34 /* TodoItemStatus.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +291,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0B608692C352D2E00DB0D34 /* ContentView.swift in Sources */,
+				A0B6089B2C3547A500DB0D34 /* TodoItemStatus.swift in Sources */,
 				A0B608672C352D2E00DB0D34 /* TodolitiApp.swift in Sources */,
+				A0B608992C35478500DB0D34 /* TodoItem.swift in Sources */,
+				A0B608962C35474200DB0D34 /* ItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
