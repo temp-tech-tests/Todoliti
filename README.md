@@ -1,5 +1,13 @@
 README
 
+### Démo
+
+|Creating first task|Slide to validate|Search|Filters|Adding details|
+|----|----|----|----|----|
+|![Simulator Screen Recording - iPhone 15 Pro - 2024-07-04 at 08 29 46](https://github.com/temp-tech-tests/Todoliti/assets/174637846/a77422ef-ad6a-446e-9e05-3b913677fe01)|![Simulator Screen Recording - iPhone 15 Pro - 2024-07-04 at 08 29 01](https://github.com/temp-tech-tests/Todoliti/assets/174637846/c6a0c01d-11cc-48d0-a7bc-16e40f72daa7)|![Simulator Screen Recording - iPhone 15 Pro - 2024-07-04 at 08 30 26](https://github.com/temp-tech-tests/Todoliti/assets/174637846/f5e7b876-4838-4daa-a1d0-0ed92f9467ef)|![Simulator Screen Recording - iPhone 15 Pro - 2024-07-04 at 08 32 13](https://github.com/temp-tech-tests/Todoliti/assets/174637846/ee809c50-5100-4ad8-b660-78427cb5f37a)|![Simulator Screen Recording - iPhone 15 Pro - 2024-07-04 at 08 33 24](https://github.com/temp-tech-tests/Todoliti/assets/174637846/18650503-4e66-4d31-be5d-b1a0cf2eb186)|
+
+
+
 ### Architecture
 
 The project is divided into two parts. A main application handle business logic and UI and a separate layer for data persistence.
