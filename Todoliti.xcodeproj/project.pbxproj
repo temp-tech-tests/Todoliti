@@ -10,7 +10,6 @@
 		A0B608672C352D2E00DB0D34 /* TodolitiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608662C352D2E00DB0D34 /* TodolitiApp.swift */; };
 		A0B608692C352D2E00DB0D34 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608682C352D2E00DB0D34 /* HomeScreen.swift */; };
 		A0B6086B2C352D3000DB0D34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0B6086A2C352D3000DB0D34 /* Assets.xcassets */; };
-		A0B6086E2C352D3000DB0D34 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0B6086D2C352D3000DB0D34 /* Preview Assets.xcassets */; };
 		A0B608782C352D3000DB0D34 /* HomeScreenViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608772C352D3000DB0D34 /* HomeScreenViewModelTests.swift */; };
 		A0B608822C352D3000DB0D34 /* TodolitiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608812C352D3000DB0D34 /* TodolitiUITests.swift */; };
 		A0B608842C352D3000DB0D34 /* TodolitiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B608832C352D3000DB0D34 /* TodolitiUITestsLaunchTests.swift */; };
@@ -52,7 +51,6 @@
 		A0B608662C352D2E00DB0D34 /* TodolitiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodolitiApp.swift; sourceTree = "<group>"; };
 		A0B608682C352D2E00DB0D34 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		A0B6086A2C352D3000DB0D34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A0B6086D2C352D3000DB0D34 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A0B608732C352D3000DB0D34 /* TodolitiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodolitiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B608772C352D3000DB0D34 /* HomeScreenViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModelTests.swift; sourceTree = "<group>"; };
 		A0B6087D2C352D3000DB0D34 /* TodolitiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodolitiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,25 +120,15 @@
 		A0B608652C352D2E00DB0D34 /* Todoliti */ = {
 			isa = PBXGroup;
 			children = (
-				A0B608B42C35A4F000DB0D34 /* ErrorOverlay */,
-				A0B608AB2C35844B00DB0D34 /* ItemDetails */,
+				A0B608662C352D2E00DB0D34 /* TodolitiApp.swift */,
 				A0B608A42C354D8400DB0D34 /* Resources */,
 				A0B6089E2C354ADE00DB0D34 /* Service */,
 				A0B608972C35477600DB0D34 /* Models */,
-				A0B608662C352D2E00DB0D34 /* TodolitiApp.swift */,
 				A0B608932C35472500DB0D34 /* Home */,
-				A0B6086A2C352D3000DB0D34 /* Assets.xcassets */,
-				A0B6086C2C352D3000DB0D34 /* Preview Content */,
+				A0B608AB2C35844B00DB0D34 /* ItemDetails */,
+				A0B608B42C35A4F000DB0D34 /* ErrorOverlay */,
 			);
 			path = Todoliti;
-			sourceTree = "<group>";
-		};
-		A0B6086C2C352D3000DB0D34 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				A0B6086D2C352D3000DB0D34 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		A0B608762C352D3000DB0D34 /* TodolitiTests */ = {
@@ -164,9 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				A0B608682C352D2E00DB0D34 /* HomeScreen.swift */,
-				A0B608A92C3551B800DB0D34 /* NewTaskAlertModifier.swift */,
-				A0B608A72C35514800DB0D34 /* NoTaskContentView.swift */,
 				A0B6089C2C354A9500DB0D34 /* HomeScreenViewModel.swift */,
+				A0B608B92C36738600DB0D34 /* Views */,
 				A0B608942C35473200DB0D34 /* ItemCell */,
 			);
 			path = Home;
@@ -201,6 +188,7 @@
 		A0B608A42C354D8400DB0D34 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A0B6086A2C352D3000DB0D34 /* Assets.xcassets */,
 				A0B608A52C354D8E00DB0D34 /* Localizable.xcstrings */,
 			);
 			path = Resources;
@@ -210,8 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				A0B608AC2C35846500DB0D34 /* ItemDetailsScreen.swift */,
-				A0B608B22C3597B300DB0D34 /* ItemDetailsCheckMarkView.swift */,
 				A0B608AE2C358BB400DB0D34 /* ItemDetailsScreenViewModel.swift */,
+				A0B608BA2C36739600DB0D34 /* Views */,
 			);
 			path = ItemDetails;
 			sourceTree = "<group>";
@@ -222,6 +210,23 @@
 				A0B608B52C35A4FA00DB0D34 /* ErrorOverlay.swift */,
 			);
 			path = ErrorOverlay;
+			sourceTree = "<group>";
+		};
+		A0B608B92C36738600DB0D34 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A0B608A72C35514800DB0D34 /* NoTaskContentView.swift */,
+				A0B608A92C3551B800DB0D34 /* NewTaskAlertModifier.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A0B608BA2C36739600DB0D34 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A0B608B22C3597B300DB0D34 /* ItemDetailsCheckMarkView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,7 +340,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0B6086E2C352D3000DB0D34 /* Preview Assets.xcassets in Resources */,
 				A0B6086B2C352D3000DB0D34 /* Assets.xcassets in Resources */,
 				A0B608A62C354D8E00DB0D34 /* Localizable.xcstrings in Resources */,
 			);
@@ -538,7 +542,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Todoliti/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 7873BAUCU8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -567,7 +571,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Todoliti/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 7873BAUCU8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
